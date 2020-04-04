@@ -29,6 +29,7 @@ Route::prefix('admin')->group(function () {
     })->name('home');
 
     Route::resource('questions', 'QuestionController');
+    Route::resource('q/{question}/alternative', 'AlternativeQuestionController');
 });
 
 

@@ -20,7 +20,10 @@
                     </div>
 
                     <div class="card-body">
-                        <h4>{{ $question->question }}</h4>
+                        <h4>
+                            {{ $question->question }}
+                            <small class="d-block" style="font-size: 0.6em;">{{ $question->alternative()->count() }} alternatives</small>
+                        </h4>
                         {{ $question->answer }}
                     </div>
                 </div>
