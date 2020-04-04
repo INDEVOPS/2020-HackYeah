@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
         // Dangerous! Do NOT do this!
         $user = DB::table('users')->insertGetId([
             'name' => 'Admin',
-            'email' => 'lukasz.kirylak@indevops.com',
+            'email' => 'admin@hackaton.lukask.pro',
             'password' => bcrypt('zaq1@WSX'),
             'created_at' => Now(),
             'updated_at' => Now()
