@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  laravel:
+    container_name: laravel
+    build: ./administration
+    volumes:
+      - ./administration/administration.conf:/etc/apache2/sites-available/administration.conf
+      - ./administration:/var/www/src
+    ports:
+      - "80:80"
+
+  database:
+    container_name: database
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: zaq1@WSX
+      MYSQL_DATABASE: administration
+    volumes:
+      - ./persistent/mysql:/var/lib/mysql
