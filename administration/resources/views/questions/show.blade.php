@@ -12,6 +12,11 @@
                         <div class="col-8 text-right">
                             <a type="button" class="btn btn-sm btn-primary mb-0" href="{{ action("QuestionController@edit", $question) }}">Edit</a>
                             <a type="button" class="btn btn-sm btn-primary mb-0" href="{{ action("AlternativeQuestionController@create", $question) }}">Add alternative question</a>
+                            <form action="{{ action("QuestionController@destroy", [$question]) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-sm btn-danger mb-0">Delete</button>
+                            </form>
                         </div>
                     </div>
                 </div>

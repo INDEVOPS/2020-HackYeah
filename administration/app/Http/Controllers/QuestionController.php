@@ -69,6 +69,9 @@ class QuestionController extends Controller
 
     public function destroy(Question $question)
     {
-        //
+        $question->alternative()->delete();
+        $question->delete();
+
+        return redirect()->action('QuestionController@index');
     }
 }
