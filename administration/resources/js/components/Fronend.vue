@@ -63,7 +63,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .frontend {
     font-family: 'Ubuntu', sans-serif;
 
