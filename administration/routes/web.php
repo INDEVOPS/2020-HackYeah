@@ -34,4 +34,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/export', 'ExportController@index');
 });
 
+Route::get('/export/answers', 'ExportController@answers');
+Route::get('/export/questions', 'ExportController@questions');
 
