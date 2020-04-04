@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Question;
 use App\AlternativeQuestion;
+
 use Illuminate\Http\Request;
 
 class AlternativeQuestionController extends Controller
@@ -27,8 +28,9 @@ class AlternativeQuestionController extends Controller
         return redirect()->action('QuestionController@show', $question);
     }
 
-    public function destroy(Question $question, AlternativeQuestion $alternativeQuestion)
+    public function destroy(Question $question, AlternativeQuestion $alternative)
     {
-        //
+        $alternative->delete();
+        return redirect()->action('QuestionController@show', $question);
     }
 }

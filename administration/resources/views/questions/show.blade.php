@@ -20,8 +20,15 @@
                     <h4>Pytania</h4>
                     <ul>
                         <li><b>{{ $question->question }}</b></li>
-                        @foreach ($question->alternative as $alt)
-                            <li>{{ $alt->question }}</li>
+                        @foreach ($question->alternative as $alternative)
+                            <li>
+                                <form action="{{ action("AlternativeQuestionController@destroy", [$question, $alternative]) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-danger mb-1">Delete</button>
+                                </form>
+                                {{ $alternative->question }}
+                            </li>
                         @endforeach
                     </ul>
                     <h4>Odpowiedź</h4>
