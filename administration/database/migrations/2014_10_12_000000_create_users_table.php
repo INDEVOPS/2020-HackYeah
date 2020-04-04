@@ -22,6 +22,15 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        
+        // Dangerous! Do NOT do this!
+        $user = DB::table('users')->insertGetId([
+            'name' => 'Admin',
+            'email' => 'lukasz.kirylak@indevops.com',
+            'password' => bcrypt('zaq1@WSX'),
+            'created_at' => Now(),
+            'updated_at' => Now()
+        ]);
     }
 
     /**
