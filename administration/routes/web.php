@@ -30,6 +30,8 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('questions', 'QuestionController');
     Route::resource('q/{question}/alternative', 'AlternativeQuestionController');
+
+    Route::get('/export', 'ExportController@index');
 });
 
 
