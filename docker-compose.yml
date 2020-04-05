@@ -18,3 +18,13 @@ services:
       MYSQL_DATABASE: administration
     volumes:
       - ./persistent/mysql:/var/lib/mysql
+
+  serving:
+    container_name: serving
+    image: tensorflow/serving
+    environment:
+      MODEL_NAME: answers
+    volumes:
+      - ./tensorflow/serving/models:/models/1/answers
+    ports:
+      - "8501:8501"
