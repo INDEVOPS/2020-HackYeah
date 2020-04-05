@@ -9,6 +9,7 @@ Project currently contains:
  - administration panel
  - webiste client
  - tensorflow server
+ 
 Plans for the future:
 
  - adding more data to the database
